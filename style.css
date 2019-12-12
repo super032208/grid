@@ -1,0 +1,27 @@
+#pad {
+  background-image: url('img/pad.jpg');
+  width: 190%;
+
+  height: 250px;
+  background-repeat: no-repeat;
+  /* background-color: tomato; */
+}
+#pic2 {
+  background-image: url('img/img2.jpg');
+  width: 250%;
+  height: 350px;
+  background-repeat: no-repeat;
+}
+#pic3 {
+  background-image: url('img/img3.jpg');
+  width: 250%;
+  text-align: center;
+  height: 350px;
+  background-repeat: no-repeat;
+}
+#pic4 {
+  background-image: url('img/img4.jpg');
+  width: 250%;
+  height: 350px;
+  background-repeat: no-repeat;
+}

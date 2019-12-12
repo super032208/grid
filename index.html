@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create two equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 350%;
+        padding: 100px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+      /* Style the buttons */
+      .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #ddd;
+      }
+
+      .btn.active {
+        background-color: #ccc;
+        color: white;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      #h3_btn {
+        align-items: center;
+        color: green;
+      }
+      #btn_load {
+        background-color: green;
+        width: 75px;
+      }
+      #save_btn {
+        background-color: hotpink;
+        width: 150px;
+      }
+      #btn_show {
+        width: 150px;
+        background-color: rgb(213, 238, 73);
+      }
+      /* For mobile phones: */
+      [class*='col-'] {
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 600px) {
+        /* For tablets: */
+        .col-s-1 {
+          width: 8.33%;
+        }
+        .col-s-2 {
+          width: 16.66%;
+        }
+        .col-s-3 {
+          width: 25%;
+        }
+        .col-s-4 {
+          width: 33.33%;
+        }
+        .col-s-5 {
+          width: 41.66%;
+        }
+        .col-s-6 {
+          width: 50%;
+        }
+        .col-s-7 {
+          width: 58.33%;
+        }
+        .col-s-8 {
+          width: 66.66%;
+        }
+        .col-s-9 {
+          width: 75%;
+        }
+        .col-s-10 {
+          width: 83.33%;
+        }
+        .col-s-11 {
+          width: 91.66%;
+        }
+        .col-s-12 {
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .col-1 {
+          width: 8.33%;
+        }
+        .col-2 {
+          width: 16.66%;
+        }
+        .col-3 {
+          width: 25%;
+        }
+        .col-4 {
+          width: 33.33%;
+        }
+        .col-5 {
+          width: 41.66%;
+        }
+        .col-6 {
+          width: 50%;
+        }
+        .col-7 {
+          width: 58.33%;
+        }
+        .col-8 {
+          width: 66.66%;
+        }
+        .col-9 {
+          width: 75%;
+        }
+        .col-10 {
+          width: 83.33%;
+        }
+        .col-11 {
+          width: 91.66%;
+        }
+        .col-12 {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h2>List View or Grid View</h2>-->
+
+    <div id="btnContainer">
+      <img id="bigpic" src="img/img2.jpg" style="display:none;" />
+
+      <button id="btn_show" onclick="show()">Show Info</button>
+    </div>
+    <br />
+
+    <div class="row">
+      <div style="text-align:center">
+        <h3 id="h3_btn">
+          Ship to: <input type="text" /> <button id="btn_load">Load</button>
+        </h3>
+      </div>
+      <br />
+      <thead>
+        <table>
+          <tr>
+            <th>No of Cartoon</th>
+            <th>Qty</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>20 pieces</td>
+            <td>10</td>
+            <td>Germany</td>
+            <td>paper</td>
+          </tr>
+          <tr>
+            <td>20 pieces</td>
+            <td>10</td>
+            <td>Germany</td>
+            <td>paper</td>
+          </tr>
+          <tr>
+            <td>20 pieces</td>
+            <td>10</td>
+            <td>Germany</td>
+            <td>paper</td>
+          </tr>
+          <tr>
+            <td>20 pieces</td>
+            <td>10</td>
+            <td>Germany</td>
+            <td>paper</td>
+          </tr>
+          <tr>
+            <td>20 pieces</td>
+            <td>10</td>
+            <td>Germany</td>
+            <td>paper</td>
+          </tr>
+          <tr>
+            <td>20 pieces</td>
+            <td>10</td>
+            <td>Germany</td>
+            <td>paper</td>
+          </tr>
+        </table>
+      </thead>
+
+      <div style="text-align:center">
+        <div style="color: brown;" class="column">
+          <div id="pic3" class="column1"></div>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <div id="pad" class="column"></div>
+      </div>
+      <div style="text-align:center">
+        <button id="save_btn">Save</button>
+      </div>
+    </div>
+
+    <script>
+      function show() {
+        var pic =
+          'http://img.tesco.com/Groceries/pi/118/5000175411118/IDShot_90x90.jpg';
+        document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+        document.getElementById('bigpic').style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
